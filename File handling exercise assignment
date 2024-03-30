@@ -1,0 +1,27 @@
+try:
+    # File Creation Process
+    with open("File handling exersice.txt", "w") as file:
+        file.write("First line in practise.\n")
+        file.write("Another line in practise\n")
+        file.write("Another line with some text.\n")
+
+    # File Reading and Display
+    with open("File handling exersice.txt", "r") as file:
+        content = file.read()
+        print("File Contents are: ")
+        print(content)
+
+    # File Appending
+    with open("File handling exersice.txt", "a") as file:
+        file.write("Additional information (appended).\n")
+        file.write("Line five to be precise\n")
+
+except FileNotFoundError:
+    print("Error: File not found.")
+except PermissionError:
+    print("Error: Permission denied.")
+except Exception as e:
+    print("An error occurred:", e)
+
+finally:
+    print("File handling process completed.")
